@@ -3,8 +3,10 @@ import { Play, ArrowRight } from "lucide-react";
 import { CTAPair } from "../components/CTAButtons";
 import CTABand from "../components/CTABand";
 import FaqAccordion from "../components/FaqAccordion";
+import Seo from "../components/Seo";
 import Icon from "../components/Icon";
 import { SERVICES, STATS, WHY, TESTIMONIALS, HOME_FAQS, PORTFOLIO, IMAGES } from "../data/site";
+import { faqSchema } from "../data/seo";
 
 const clients = ["ACME CORP", "NORTHWIND", "VERTEX", "MERIDIAN", "AURUM", "STRATOS"];
 const recent = PORTFOLIO.slice(0, 3);
@@ -12,6 +14,13 @@ const recent = PORTFOLIO.slice(0, 3);
 export default function Home() {
   return (
     <>
+      <Seo
+        title="Production House & Creative Agency in Gurgaon | YTWC"
+        description="YTWC is a corporate video production house & marketing agency in Gurgaon, Delhi NCR — films, photography, drone and marketing with our own studio."
+        path="/"
+        breadcrumbs={[{ label: "Home", to: "/" }]}
+        schemas={[faqSchema(HOME_FAQS)]}
+      />
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden" data-testid="hero-section">
         <img src={IMAGES.heroHome} alt="cinematic corporate video shoot on a film set in Gurgaon" className="absolute inset-0 w-full h-full object-cover" />

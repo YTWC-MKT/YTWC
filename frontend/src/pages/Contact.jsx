@@ -4,8 +4,10 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { toast, Toaster } from "sonner";
 import PageBreadcrumb from "../components/PageBreadcrumb";
 import FaqAccordion from "../components/FaqAccordion";
+import Seo from "../components/Seo";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { COMPANY, SERVICES, whatsappLink } from "../data/site";
+import { faqSchema } from "../data/seo";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -44,6 +46,13 @@ export default function Contact() {
   return (
     <>
       <Toaster theme="dark" position="top-center" richColors />
+      <Seo
+        title="Contact YTWC | Video Production in Gurgaon, Delhi NCR"
+        description="Contact YTWC in Sector 77, Gurugram for corporate video, photography, drone and marketing across Delhi NCR. Call +91 99904 33338 or get a quote in 24 hours."
+        path="/contact"
+        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Contact" }]}
+        schemas={[faqSchema(faqs)]}
+      />
       <div className="h-20" />
       <PageBreadcrumb items={[{ label: "Home", to: "/" }, { label: "Contact" }]} />
 

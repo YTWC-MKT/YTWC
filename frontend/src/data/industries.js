@@ -1,0 +1,108 @@
+import { IMAGES } from "./site";
+
+// Industry pages: hero + pain points + relevant services + case example + FAQ + CTA
+export const INDUSTRIES = {
+  manufacturing: {
+    path: "/industries/manufacturing",
+    breadcrumb: "Manufacturing",
+    eyebrow: "Industry Solutions",
+    h1: "Video Production & Photography for Manufacturers & Factories",
+    subline: "Show your capability, win bigger clients and train your workforce — industrial films and photography for manufacturers across Gurgaon, Faridabad and Manesar.",
+    heroAlt: "video production for a manufacturing plant in Manesar",
+    heroImg: IMAGES.corporateOffice,
+    meta: { title: "Video for Manufacturers & Factories | YTWC", description: "Video production & photography for manufacturers and factories in Gurgaon, Faridabad, Manesar — capability films, process videos and training content." },
+    pains: [
+      { title: "Clients can't see your scale", desc: "Buyers make decisions before visiting. A capability film puts your plant in front of them instantly." },
+      { title: "Complex processes are hard to explain", desc: "Process films turn intricate manufacturing into a clear, compelling story." },
+      { title: "Safety around live machinery", desc: "Our PPE-ready, safety-trained crews film without disrupting production." },
+      { title: "Training takes too long", desc: "SOP and safety videos standardise training across shifts and sites." },
+    ],
+    services: ["industrial-photography-videography", "drone-photography-videography", "training-explainer-videos", "corporate-film-production"],
+    example: { title: "Capability Film for an Auto-Component Maker", desc: "For a Tier-1 supplier in Manesar, we produced a plant capability film with ground and aerial coverage that now anchors their sales pitches to OEMs across NCR." },
+    faqs: [
+      { q: "Can you film safely inside our plant?", a: "Yes. Our crews use PPE, follow site inductions and plan around live machinery — a core specialism for us in the NCR belt." },
+      { q: "What videos help manufacturers most?", a: "Capability films, process/SOP videos, safety training and drone campus aerials tend to deliver the most value." },
+      { q: "Do you shoot in Faridabad and Manesar?", a: "Yes — the Faridabad–Manesar belt is one of our most active regions." },
+      { q: "Can videos double as training content?", a: "Absolutely. We design films that serve both marketing and L&D where useful." },
+      { q: "How do we start?", a: "Share your facility and goals via 'Get a Quote'; we reply within 24 hours." },
+    ],
+  },
+
+  "real-estate": {
+    path: "/industries/real-estate",
+    breadcrumb: "Real Estate",
+    eyebrow: "Industry Solutions",
+    h1: "Video & Photo Production for Real Estate Developers",
+    subline: "Sell projects faster with cinematic walkthroughs, township films and compliant drone aerials — for developers across Gurgaon, Noida and Delhi NCR.",
+    heroAlt: "real estate video production drone flyover of a Gurgaon township",
+    heroImg: IMAGES.drone,
+    meta: { title: "Video for Real Estate Developers | YTWC", description: "Real estate video & photo production in Delhi NCR — project walkthroughs, township films, architecture photography and compliant drone aerials." },
+    pains: [
+      { title: "Buyers decide online first", desc: "A cinematic project film and walkthrough convert interest before a site visit." },
+      { title: "Hard to show scale", desc: "Compliant drone aerials reveal the true scale and location advantage of a project." },
+      { title: "Launch timelines are tight", desc: "Our fast-track editing meets aggressive launch and campaign deadlines." },
+      { title: "Channel partners need assets", desc: "We deliver a full asset kit for sales teams and channel-partner campaigns." },
+    ],
+    services: ["real-estate-photography-videography", "drone-photography-videography", "corporate-film-production", "digital-marketing"],
+    example: { title: "Township Launch Film in Gurgaon", desc: "For a Gurgaon developer, we combined ground cinematography with aerial flyovers into a launch film and walkthrough set used across their website, ads and sales galleries." },
+    faqs: [
+      { q: "Do you provide drone flyovers?", a: "Yes — with trained, certified pilots and fully compliant drone operations, subject to site zone and permissions." },
+      { q: "Can you film occupied or under-construction sites?", a: "Yes. We handle show-homes, occupied units and active construction with proper coordination." },
+      { q: "How fast can you deliver for a launch?", a: "We offer fast-track editing to meet launch and campaign timelines." },
+      { q: "Do you also run the ad campaigns?", a: "Yes — our marketing team can run performance campaigns using the assets we produce." },
+      { q: "How do we get a quote?", a: "Share your project details via 'Get a Quote'; we respond within 24 hours." },
+    ],
+  },
+
+  "startups-d2c": {
+    path: "/industries/startups-d2c",
+    breadcrumb: "Startups & D2C",
+    eyebrow: "Industry Solutions",
+    h1: "Production & Marketing for Startups and D2C Brands",
+    subline: "Founder stories, product films, performance-ready content and always-on social — one partner to build and grow your brand in Gurgaon and Delhi NCR.",
+    heroAlt: "content production for a D2C startup brand in Gurgaon",
+    heroImg: IMAGES.camera,
+    meta: { title: "Production & Marketing for Startups & D2C | YTWC", description: "Production & marketing for startups and D2C brands in Delhi NCR — founder films, product videos, performance content and social media." },
+    pains: [
+      { title: "Small team, big content needs", desc: "Batch production keeps your calendar full without a big in-house team." },
+      { title: "Ads need great creative", desc: "We produce performance-ready video that actually converts on Meta and Google." },
+      { title: "Building a founder brand", desc: "Founder films and personal branding shoots build trust and reach." },
+      { title: "Tight budgets", desc: "Bundled production + marketing gets you more from every rupee." },
+    ],
+    services: ["content-creation", "product-photography", "founder-director-portfolio-shoot", "digital-marketing"],
+    example: { title: "Launch Content Engine for a D2C Brand", desc: "For a Gurgaon D2C brand, we ran monthly batch shoots producing reels, product films and ad creative — feeding both organic social and paid campaigns from one pipeline." },
+    faqs: [
+      { q: "Do you work with early-stage startups?", a: "Yes. We tailor scope and budget to fit startups and growing D2C brands." },
+      { q: "Can you produce content and run ads?", a: "Yes — production and performance marketing under one roof, which improves results." },
+      { q: "How do you keep costs manageable?", a: "Batch shoots and bundled retainers make content and campaigns more efficient." },
+      { q: "Do you help with founder branding?", a: "Yes — founder films and personal branding shoots are popular with startups." },
+      { q: "How do we start?", a: "Share your goals via 'Get a Quote'; we reply within 24 hours." },
+    ],
+  },
+
+  "healthcare-education": {
+    path: "/industries/healthcare-education",
+    breadcrumb: "Healthcare & Education",
+    eyebrow: "Industry Solutions",
+    h1: "Video Production for Healthcare & Education Institutions",
+    subline: "Trust-building films for hospitals, clinics, schools and colleges across Delhi NCR — campus tours, patient and student stories, and awareness content produced with sensitivity.",
+    heroAlt: "video production for a healthcare institution in Delhi NCR",
+    heroImg: IMAGES.heroService,
+    meta: { title: "Video for Healthcare & Education | YTWC", description: "Video production for hospitals, clinics, schools and colleges in Delhi NCR — campus films, patient & student stories and awareness content." },
+    pains: [
+      { title: "Trust is everything", desc: "Authentic films build credibility with patients, parents and students." },
+      { title: "Sensitive environments", desc: "We shoot with discretion and follow institutional and privacy protocols." },
+      { title: "Explaining services", desc: "Clear explainer and awareness videos simplify complex offerings." },
+      { title: "Admissions & awareness", desc: "Campus tours and testimonial films support admissions and outreach." },
+    ],
+    services: ["corporate-film-production", "training-explainer-videos", "corporate-event-photography-videography", "content-creation"],
+    example: { title: "Campus Film for an NCR Institution", desc: "For an education institution in Delhi NCR, we produced a campus film and student-story series used across admissions, website and social channels." },
+    faqs: [
+      { q: "Can you shoot inside hospitals and campuses?", a: "Yes, with sensitivity and adherence to institutional, safety and privacy protocols." },
+      { q: "Do you produce awareness and explainer videos?", a: "Yes — clear, empathetic explainer and awareness content is a common request." },
+      { q: "Can you capture patient or student stories?", a: "Yes, with appropriate consent and a careful, respectful approach." },
+      { q: "Do you cover events like convocations?", a: "Yes — we provide event photography and videography for institutional events." },
+      { q: "How do we begin?", a: "Share your requirements via 'Get a Quote'; we respond within 24 hours." },
+    ],
+  },
+};

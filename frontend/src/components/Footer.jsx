@@ -4,18 +4,42 @@ import { COMPANY } from "../data/site";
 
 const prodLinks = [
   { label: "Corporate Films", to: "/services/corporate-film-production" },
-  { label: "Ad Films & TVC", to: "/services/ad-films-tvc" },
-  { label: "Industrial & Factory Shoots", to: "/services/industrial-factory-shoots" },
+  { label: "Ad Films & TVC", to: "/services/ad-film-production" },
+  { label: "Industrial & Factory Shoots", to: "/services/industrial-photography-videography" },
   { label: "Corporate Photography", to: "/services/corporate-photography" },
   { label: "Drone & Aerial", to: "/services/drone-photography-videography" },
-  { label: "Product Shoots", to: "/services/product-shoots" },
+  { label: "Product Shoots", to: "/services/product-photography" },
 ];
 
 const mktLinks = [
   { label: "Social Media Management", to: "/services/social-media-management" },
   { label: "Digital Marketing", to: "/services/digital-marketing" },
-  { label: "Content Creation", to: "/services/social-media-management" },
-  { label: "Branding", to: "/services/digital-marketing" },
+  { label: "Content Creation", to: "/services/content-creation" },
+  { label: "Branding & Design", to: "/services/branding-design" },
+];
+
+const companyLinks = [
+  { label: "About", to: "/about" },
+  { label: "Our Brands", to: "/our-brands" },
+  { label: "Pricing", to: "/pricing" },
+  { label: "FAQ", to: "/faq" },
+  { label: "Careers", to: "/careers" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "Blog", to: "/blog" },
+];
+
+const moreLinks = [
+  { label: "Video Production Services", to: "/video-production-services" },
+  { label: "Marketing Services", to: "/marketing-services" },
+  { label: "Gurgaon", to: "/video-production-company-gurgaon" },
+  { label: "Delhi NCR", to: "/video-production-company-delhi-ncr" },
+  { label: "Noida", to: "/video-production-company-noida" },
+  { label: "Delhi", to: "/video-production-company-delhi" },
+  { label: "Faridabad & Manesar", to: "/industrial-shoot-faridabad-manesar" },
+  { label: "Manufacturing", to: "/industries/manufacturing" },
+  { label: "Real Estate", to: "/industries/real-estate" },
+  { label: "Startups & D2C", to: "/industries/startups-d2c" },
+  { label: "Healthcare & Education", to: "/industries/healthcare-education" },
 ];
 
 export default function Footer() {
@@ -74,9 +98,28 @@ export default function Footer() {
             </div>
             <p className="mt-4 text-sm text-white/50">
               Our Brands:{" "}
-              <a href="#" className="text-white/70 hover:text-gold inline-flex items-center gap-1">Elegant Photo Studio <ExternalLink className="w-3 h-3" /></a>{" | "}
-              <a href="#" className="text-white/70 hover:text-gold inline-flex items-center gap-1">ShutterDeck <ExternalLink className="w-3 h-3" /></a>
+              <a href="https://elegantphotostudio.in" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-gold inline-flex items-center gap-1">Elegant Photo Studio <ExternalLink className="w-3 h-3" /></a>{" | "}
+              <a href="https://photostudios.in" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-gold inline-flex items-center gap-1">ShutterDeck <ExternalLink className="w-3 h-3" /></a>
             </p>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-10 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-gold mb-4">Company</h3>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {companyLinks.map((l) => (
+                <Link key={l.to + l.label} to={l.to} className="text-sm text-white/60 hover:text-white transition-colors">{l.label}</Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-gold mb-4">Hubs, Locations & Industries</h3>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {moreLinks.map((l) => (
+                <Link key={l.to + l.label} to={l.to} className="text-sm text-white/60 hover:text-white transition-colors">{l.label}</Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Play } from "lucide-react";
 import PageBreadcrumb from "../components/PageBreadcrumb";
 import CTABand from "../components/CTABand";
+import Seo from "../components/Seo";
 import { PORTFOLIO, PORTFOLIO_FILTERS } from "../data/site";
 
 export default function Portfolio() {
@@ -10,6 +11,12 @@ export default function Portfolio() {
 
   return (
     <>
+      <Seo
+        title="Our Work | Video & Photo Portfolio | YTWC"
+        description="Explore YTWC's portfolio — corporate films, ad films, industrial shoots, photography and drone work from across Gurgaon and Delhi NCR."
+        path="/portfolio"
+        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Portfolio" }]}
+      />
       <div className="h-20" />
       <PageBreadcrumb items={[{ label: "Home", to: "/" }, { label: "Portfolio" }]} />
 

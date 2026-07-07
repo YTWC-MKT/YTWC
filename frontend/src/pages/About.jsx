@@ -1,6 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import PageBreadcrumb from "../components/PageBreadcrumb";
 import CTABand from "../components/CTABand";
+import Seo from "../components/Seo";
 import { IMAGES } from "../data/site";
 
 const brands = [
@@ -28,6 +29,12 @@ const studioGrid = [
 export default function About() {
   return (
     <>
+      <Seo
+        title="About YTWC Pvt Ltd | Production House in Gurgaon"
+        description="About YTWC Pvt Ltd — a registered production house & marketing agency in Sector 77, Gurugram, serving Delhi NCR. Brands: Elegant Photo Studio & ShutterDeck."
+        path="/about"
+        breadcrumbs={[{ label: "Home", to: "/" }, { label: "About" }]}
+      />
       <div className="h-20" />
       <PageBreadcrumb items={[{ label: "Home", to: "/" }, { label: "About" }]} />
 

@@ -14,28 +14,47 @@ export const COMPANY = {
   },
   hours: "Mon – Sat · 10:00 AM – 7:00 PM",
   social: {
-    instagram: "https://instagram.com",
+    instagram: "https://www.instagram.com/elegantphotostudio/",
     linkedin: "https://linkedin.com",
-    youtube: "https://youtube.com",
-    facebook: "https://facebook.com",
+    youtube: "https://youtube.com/@elegantphotos",
+    facebook: "https://www.facebook.com/Elegantphotos.in/",
   },
 };
 
 export const whatsappLink = (msg = "Hi YTWC, I'd like to discuss a project.") =>
   `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(msg)}`;
 
-export const NAV = [
-  { label: "Home", to: "/" },
-  {
-    label: "Services",
-    to: "/services",
-    children: [
-      { label: "Video Production", to: "/services/corporate-film-production" },
-      { label: "Photography", to: "/services/corporate-photography" },
-      { label: "Drone & Aerial", to: "/services/drone-photography-videography" },
-      { label: "Marketing", to: "/services/social-media-management" },
+// Grouped mega-menu for the header Services dropdown.
+export const MENU_SERVICES = {
+  production: {
+    hub: { label: "Video Production Services", to: "/video-production-services" },
+    items: [
+      { label: "Corporate Film Production", to: "/services/corporate-film-production" },
+      { label: "Ad Film & TVC Production", to: "/services/ad-film-production" },
+      { label: "Industrial & Factory Shoots", to: "/services/industrial-photography-videography" },
+      { label: "Corporate Photography", to: "/services/corporate-photography" },
+      { label: "Product Photography & Video", to: "/services/product-photography" },
+      { label: "Corporate Event Coverage", to: "/services/corporate-event-photography-videography" },
+      { label: "Founder & CEO Portfolio Shoot", to: "/services/founder-director-portfolio-shoot" },
+      { label: "Training & Explainer Videos", to: "/services/training-explainer-videos" },
+      { label: "Real Estate Photography & Video", to: "/services/real-estate-photography-videography" },
+      { label: "Drone & Aerial Photography", to: "/services/drone-photography-videography" },
     ],
   },
+  marketing: {
+    hub: { label: "Marketing Services", to: "/marketing-services" },
+    items: [
+      { label: "Social Media Management", to: "/services/social-media-management" },
+      { label: "Digital Marketing", to: "/services/digital-marketing" },
+      { label: "Content Creation", to: "/services/content-creation" },
+      { label: "Branding & Design", to: "/services/branding-design" },
+    ],
+  },
+};
+
+export const NAV = [
+  { label: "Home", to: "/" },
+  { label: "Services", to: "/video-production-services", mega: true },
   { label: "Portfolio", to: "/portfolio" },
   { label: "About", to: "/about" },
   { label: "Blog", to: "/blog" },
@@ -59,14 +78,17 @@ export const IMAGES = {
 
 export const SERVICES = [
   { icon: "Film", title: "Corporate Film Production", slug: "corporate-film-production", desc: "Company profiles and brand films that make Delhi NCR businesses look world-class." },
-  { icon: "Clapperboard", title: "Ad Films & TVC", slug: "ad-films-tvc", desc: "High-impact commercials and TVCs shot and finished in-house in Gurgaon." },
-  { icon: "Factory", title: "Industrial & Factory Shoots", slug: "industrial-factory-shoots", desc: "Plant walkthroughs and process films across Manesar and Delhi NCR industrial belts." },
+  { icon: "Clapperboard", title: "Ad Films & TVC", slug: "ad-film-production", desc: "High-impact commercials and TVCs shot and finished in-house in Gurgaon." },
+  { icon: "Factory", title: "Industrial & Factory Shoots", slug: "industrial-photography-videography", desc: "Plant walkthroughs and process films across Manesar and Delhi NCR industrial belts." },
   { icon: "Camera", title: "Corporate Photography", slug: "corporate-photography", desc: "Headshots, offices and events captured with editorial polish." },
   { icon: "Send", title: "Drone & Aerial Photography", slug: "drone-photography-videography", desc: "Certified pilots, fully compliant aerial cinematography across Gurgaon & NCR." },
-  { icon: "Package", title: "Product Shoots", slug: "product-shoots", desc: "Studio-grade product and packshot photography with lighting control." },
+  { icon: "Package", title: "Product Shoots", slug: "product-photography", desc: "Studio-grade product and packshot photography with lighting control." },
   { icon: "Share2", title: "Social Media Management", slug: "social-media-management", desc: "Always-on content, reels and community management for growing brands." },
   { icon: "TrendingUp", title: "Digital Marketing", slug: "digital-marketing", desc: "Performance campaigns, SEO and paid media that drive measurable ROI." },
 ];
+
+// Which slugs belong to the marketing hub (for breadcrumbs).
+export const MARKETING_SLUGS = ["social-media-management", "digital-marketing", "content-creation", "branding-design"];
 
 export const STATS = [
   "200+ Corporate Projects",
@@ -112,98 +134,3 @@ export const PORTFOLIO = [
 ];
 
 export const PORTFOLIO_FILTERS = ["All", "Corporate Films", "Ad Films", "Industrial", "Photography", "Drone"];
-
-export const BLOG_POSTS = [
-  { slug: "corporate-video-production-cost-gurgaon-2026", title: "How Much Does Corporate Video Production Cost in Gurgaon? (2026 Guide)", cat: "Corporate Video", excerpt: "A transparent breakdown of what drives corporate video pricing in Gurgaon and Delhi NCR — from shoot days to post-production.", date: "12 Jan 2026", img: IMAGES.heroHome },
-  { slug: "choosing-production-house-delhi-ncr", title: "How to Choose the Right Production House in Delhi NCR", cat: "Guides", excerpt: "Studio, crew, gear or turnaround — the factors that actually matter when picking a video partner in NCR.", date: "05 Jan 2026", img: IMAGES.crew },
-  { slug: "drone-shoot-rules-delhi-ncr", title: "Drone Shoot Rules in Delhi NCR: What Brands Should Know", cat: "Drone", excerpt: "Green, yellow and red zones explained in plain English for factories, real estate and events.", date: "28 Dec 2025", img: IMAGES.drone },
-  { slug: "industrial-video-checklist", title: "The Industrial & Factory Video Checklist", cat: "Industrial", excerpt: "Everything to prepare before filming inside a plant in Manesar or the NCR industrial belt.", date: "20 Dec 2025", img: IMAGES.corporateOffice },
-  { slug: "reels-that-convert", title: "Social Media Reels That Actually Convert", cat: "Marketing", excerpt: "A repeatable content system for B2B brands that want reach and pipeline, not just views.", date: "12 Dec 2025", img: IMAGES.camera },
-  { slug: "tvc-vs-brand-film", title: "TVC vs Brand Film: Which Does Your Business Need?", cat: "Ad Films", excerpt: "When to invest in a punchy commercial and when a longer brand film wins the room.", date: "04 Dec 2025", img: IMAGES.heroService },
-];
-
-// Service page content, keyed by slug. Two full examples + fallbacks.
-export const SERVICE_PAGES = {
-  "corporate-film-production": {
-    hero: IMAGES.heroService,
-    h1: "Corporate Film Production in Gurgaon & Delhi NCR",
-    subline: "Company profile videos, brand films and leadership stories — scripted, shot and finished in-house from our Sector 77 studio for businesses across Delhi NCR.",
-    heroAlt: "corporate film production crew shooting in a Gurgaon office",
-    badge: null,
-    included: [
-      { icon: "PenLine", title: "Concept & Script", desc: "Messaging workshops and scripts aligned to your brand and audience." },
-      { icon: "Clapperboard", title: "Direction & Shoot", desc: "Experienced directors and multi-camera shoots at your site or our studio." },
-      { icon: "Users", title: "Professional Crew & Gear", desc: "In-house cinematographers, lighting, audio and cinema-grade cameras." },
-      { icon: "Scissors", title: "Editing & Color Grade", desc: "Story-first editing with cinematic color grading." },
-      { icon: "Mic", title: "Voiceover & Music", desc: "Professional voiceover artists and licensed music." },
-      { icon: "MonitorPlay", title: "Delivery in All Formats", desc: "Optimised exports for web, social, events and broadcast." },
-    ],
-    process: ["Brief", "Script", "Shoot", "Edit", "Deliver"],
-    workTitle: "Recent Corporate Films",
-    whyTitle: "Why Companies in Delhi NCR Choose YTWC",
-    why: [
-      "Own studio and in-house crew in Sector 77, Gurgaon — no rental delays.",
-      "End-to-end delivery from concept to final master files.",
-      "NCR-wide coverage: Gurgaon, Delhi, Noida, Faridabad and Manesar.",
-      "Reliable, fast turnaround backed by structured production pipelines.",
-    ],
-    pricing: "Corporate film packages start from ₹XX,XXX — custom quote in 24 hours.",
-    faqs: [
-      { q: "How much does a corporate film cost in Gurgaon?", a: "Pricing depends on shoot days, crew size, locations and post-production. Most corporate films are custom-quoted — share your brief for a tailored estimate within 24 hours." },
-      { q: "How long does production take?", a: "A typical corporate film takes 2–4 weeks from brief to final delivery, depending on scripting, shoot scheduling and revisions." },
-      { q: "Do you shoot at our office or your studio?", a: "Both. We can film on-location at your office or facility anywhere in Delhi NCR, or in our controlled Sector 77 studio." },
-      { q: "What deliverables do we get?", a: "You receive the final film in all required formats — web, social cut-downs, event masters — plus raw or graded footage on request." },
-      { q: "Do you handle scripting?", a: "Yes. Scripting, storyboarding and messaging are part of our end-to-end service." },
-    ],
-    related: [
-      { title: "Ad Films & TVC", slug: "ad-films-tvc" },
-      { title: "Industrial & Factory Shoots", slug: "industrial-factory-shoots" },
-      { title: "Corporate Photography", slug: "corporate-photography" },
-    ],
-    relatedLine: true,
-  },
-  "drone-photography-videography": {
-    hero: IMAGES.drone,
-    h1: "Drone & Aerial Photography in Gurgaon, Delhi NCR — Trained & Certified Pilots",
-    subline: "Cinematic aerial photography and drone videography for factories, real estate, events and ad films — fully compliant drone operations across Delhi NCR.",
-    heroAlt: "drone aerial videography over a Gurgaon skyline at dusk",
-    badge: "Trained & Certified Drone Pilots",
-    included: [
-      { icon: "Factory", title: "Factory & Plant Aerials", desc: "Sweeping overheads of plants and campuses across Manesar and NCR." },
-      { icon: "Building2", title: "Real Estate & Township Flyovers", desc: "Cinematic flyovers for projects in Gurgaon, Noida and beyond." },
-      { icon: "HardHat", title: "Construction Progress Monitoring", desc: "Scheduled aerial captures to document build progress." },
-      { icon: "PartyPopper", title: "Corporate Events", desc: "Elevated coverage of launches, conferences and gatherings." },
-      { icon: "Rocket", title: "Ad Films & FPV Cinematics", desc: "Dynamic FPV and aerial shots for commercials and brand films." },
-      { icon: "Heart", title: "Weddings (via Elegant Photo Studio)", desc: "Aerial wedding coverage delivered through our sister brand." },
-    ],
-    process: ["Brief", "Recce", "Permissions", "Fly", "Deliver"],
-    workTitle: "Recent Aerial Work",
-    whyTitle: "Why Companies in Delhi NCR Choose YTWC",
-    why: [
-      "Trained and certified drone pilots with fully compliant operations.",
-      "Experience filming inside factory premises across Manesar and NCR.",
-      "We handle permissions and site coordination end to end.",
-      "Cinema-grade aerial footage integrated with ground production.",
-    ],
-    pricing: "Drone shoot packages start from ₹XX,XXX — custom quote in 24 hours.",
-    legal: {
-      title: "Is Drone Shooting Legal in Delhi NCR?",
-      body: "Drone operations in India follow a zone-based system. In plain English: Gurgaon is largely operable for commercial drone shoots, making it ideal for factory, real estate and event aerials. Delhi city is heavily restricted, especially near airports and VIP/government zones, so many central areas fall into no-fly or permission-heavy categories. Noida is mixed — some areas are open while others sit near sensitive zones. YTWC handles the required permissions and always flies with trained, certified pilots and fully compliant drone operations, so your shoot stays on the right side of the rules.",
-    },
-    faqs: [
-      { q: "Is drone shooting legal in Gurgaon/Delhi NCR?", a: "It depends on the location's zone. Gurgaon is largely operable, Delhi city is heavily restricted near airports and VIP zones, and Noida is mixed. We assess each site and secure the necessary permissions before flying." },
-      { q: "Are your pilots trained and certified?", a: "Yes. All our drone operations are carried out by trained and certified pilots with fully compliant procedures." },
-      { q: "Can you shoot inside factory premises?", a: "Yes. We regularly capture aerials inside plants and factory campuses across Manesar and the NCR industrial belt, coordinating with your safety and security teams." },
-      { q: "How much does a drone shoot cost?", a: "Cost depends on location, permissions, flight hours and deliverables. Share your brief and we'll send a custom quote within 24 hours." },
-      { q: "Do you handle permissions?", a: "Yes. We manage the required permissions and compliance so your aerial shoot proceeds smoothly." },
-    ],
-    related: [
-      { title: "Industrial & Factory Shoots", slug: "industrial-factory-shoots" },
-      { title: "Real Estate Shoots", slug: "product-shoots" },
-      { title: "Ad Films & TVC", slug: "ad-films-tvc" },
-    ],
-    relatedLine: false,
-  },
-};
-
-export const SERVICE_DROPDOWN = SERVICES.map((s) => ({ label: s.title, to: `/services/${s.slug}` }));

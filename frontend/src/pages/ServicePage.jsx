@@ -1,40 +1,56 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowRight, Check, Play, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, Play, ShieldCheck, ExternalLink } from "lucide-react";
 import PageBreadcrumb from "../components/PageBreadcrumb";
 import CTABand from "../components/CTABand";
 import FaqAccordion from "../components/FaqAccordion";
+import Seo from "../components/Seo";
 import { CTAPair } from "../components/CTAButtons";
 import Icon from "../components/Icon";
-import { SERVICE_PAGES, SERVICES, PORTFOLIO } from "../data/site";
+import { SERVICE_PAGES } from "../data/services";
+import { SERVICES, PORTFOLIO, MARKETING_SLUGS } from "../data/site";
+import { serviceSchema, faqSchema } from "../data/seo";
 
 export default function ServicePage() {
   const { slug } = useParams();
   const data = SERVICE_PAGES[slug];
 
-  // For services without dedicated content, redirect to the flagship example.
   if (!data) {
     const exists = SERVICES.some((s) => s.slug === slug);
     return <Navigate to={exists ? "/services/corporate-film-production" : "/"} replace />;
   }
 
   const work = PORTFOLIO.slice(0, 3);
+  const isMarketing = MARKETING_SLUGS.includes(slug);
+  const hub = isMarketing
+    ? { label: "Marketing Services", to: "/marketing-services" }
+    : { label: "Video Production Services", to: "/video-production-services" };
+  const path = `/services/${slug}`;
+
+  const breadcrumbs = [
+    { label: "Home", to: "/" },
+    { label: hub.label, to: hub.to },
+    { label: data.h1.split(" in ")[0] },
+  ];
+
+  const relHref = (r) => r.to || `/services/${r.slug}`;
 
   return (
     <>
-      <div className="h-20" />
-      <PageBreadcrumb
-        items={[
-          { label: "Home", to: "/" },
-          { label: "Services", to: "/services/corporate-film-production" },
-          { label: data.h1.split(" in ")[0] },
-        ]}
+      <Seo
+        title={data.meta.title}
+        description={data.meta.description}
+        path={path}
+        breadcrumbs={breadcrumbs}
+        schemas={[serviceSchema({ name: data.serviceType, serviceType: data.serviceType, path }), faqSchema(data.faqs)]}
       />
+      <div className="h-20" />
+      <PageBreadcrumb items={breadcrumbs} />
 
       {/* Hero */}
       <section className="py-16 md:py-24" data-testid="service-hero">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-gold mb-6">Production Service</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-gold mb-6">{isMarketing ? "Marketing Service" : "Production Service"}</p>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] text-white">{data.h1}</h1>
             <p className="mt-6 text-lg text-white/70 leading-relaxed">{data.subline}</p>
             {data.badge && (
@@ -45,7 +61,7 @@ export default function ServicePage() {
             <CTAPair className="mt-9" prefix="service-hero-" />
           </div>
           <div className="relative aspect-[4/3] overflow-hidden">
-            <img src={data.hero} alt={data.heroAlt} className="w-full h-full object-cover" />
+            <img src={data.hero} alt={data.heroAlt} loading="lazy" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -53,7 +69,7 @@ export default function ServicePage() {
       {/* What's included */}
       <section className="py-16 md:py-24 bg-[#111111] border-y border-white/10" data-testid="included-section">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">{data.badge ? "Drone Shoots We Do" : "What's Included"}</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">{data.includedTitle || "What's Included"}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.included.map((c) => (
               <div key={c.title} className="bg-[#0A0A0A] border border-white/10 p-8 hover:border-gold/40 transition-colors">
@@ -82,12 +98,29 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Legal (drone) */}
+      {/* Legal / detailed */}
       {data.legal && (
         <section className="py-16 md:py-24 bg-[#111111] border-y border-white/10" data-testid="legal-section">
           <div className="max-w-4xl mx-auto px-6 md:px-12">
             <h2 className="font-serif text-3xl sm:text-4xl text-white mb-6">{data.legal.title}</h2>
             <p className="text-white/70 text-lg leading-relaxed">{data.legal.body}</p>
+          </div>
+        </section>
+      )}
+
+      {/* Callout card (e.g. ShutterDeck) */}
+      {data.callout && (
+        <section className="py-14" data-testid="service-callout">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="bg-gold/10 border border-gold/30 p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div>
+                <h3 className="font-serif text-2xl text-white mb-2">{data.callout.title}</h3>
+                <p className="text-white/70 max-w-2xl">{data.callout.body}</p>
+              </div>
+              <a href={data.callout.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-gold text-gold px-6 py-3 uppercase tracking-widest text-xs hover:bg-gold hover:text-black transition-colors whitespace-nowrap">
+                {data.callout.label} <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </section>
       )}
@@ -99,7 +132,7 @@ export default function ServicePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {work.map((w) => (
               <Link to="/portfolio" key={w.title} className="group relative aspect-video overflow-hidden">
-                <img src={w.img} alt={w.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={w.img} alt={w.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                   <span className="w-14 h-14 rounded-full bg-white/10 border border-white/40 flex items-center justify-center text-white group-hover:bg-gold group-hover:text-black transition-colors">
                     <Play className="w-5 h-5 ml-0.5" fill="currentColor" />
@@ -145,7 +178,7 @@ export default function ServicePage() {
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">Related Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {data.related.map((r) => (
-              <Link key={r.slug} to={`/services/${r.slug}`} data-testid={`related-${r.slug}`} className="group bg-[#0A0A0A] border border-white/10 p-8 hover:border-gold/40 transition-colors flex items-center justify-between">
+              <Link key={r.title} to={relHref(r)} data-testid={`related-${r.slug || r.to}`} className="group bg-[#0A0A0A] border border-white/10 p-8 hover:border-gold/40 transition-colors flex items-center justify-between">
                 <span className="font-sans text-lg text-white">{r.title}</span>
                 <ArrowRight className="w-5 h-5 text-gold group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -154,7 +187,7 @@ export default function ServicePage() {
           {data.relatedLine && (
             <p className="mt-8 text-white/60">
               Also see our{" "}
-              <Link to="/services/corporate-film-production" className="text-gold hover:underline">video production services in Gurgaon and Delhi NCR</Link>.
+              <Link to="/video-production-services" className="text-gold hover:underline">video production services in Gurgaon and Delhi NCR</Link>.
             </p>
           )}
         </div>
