@@ -1,0 +1,117 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Luxury)",
+  "emotional_tone": "Premium, cinematic, trustworthy, authoritative B2B credibility.",
+  "typography": {
+    "heading_font": "Cormorant Garamond",
+    "body_font": "Outfit",
+    "font_pairings_reasoning": "Cormorant Garamond provides a high-end, editorial, cinematic feel for large headlines, establishing trust and luxury. Outfit balances it with a clean, modern, and highly legible geometric sans-serif for body copy.",
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl font-serif tracking-tight leading-none",
+      "h2": "text-3xl sm:text-4xl font-serif tracking-tight",
+      "h3": "text-2xl sm:text-3xl font-serif tracking-tight",
+      "h4": "text-xl font-sans font-medium",
+      "body_large": "text-lg font-sans text-white/80 leading-relaxed",
+      "body": "text-base font-sans text-white/70 leading-relaxed",
+      "small": "text-sm font-sans text-white/60 uppercase tracking-[0.2em]"
+    }
+  },
+  "colors": {
+    "background": {
+      "base": "#0A0A0A",
+      "surface": "#111111",
+      "surface_elevated": "#1A1A1A"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "rgba(255, 255, 255, 0.7)",
+      "muted": "rgba(255, 255, 255, 0.4)"
+    },
+    "accent": {
+      "primary": "#D4AF37",
+      "primary_hover": "#B3912E",
+      "secondary": "#25D366",
+      "secondary_hover": "#1EBE5D"
+    },
+    "border": "rgba(255, 255, 255, 0.1)"
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous spacing. Use p-12, p-16, py-24 for sections. Content must breathe to feel luxurious.",
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "section_padding": "py-20 md:py-32",
+    "grid_patterns": {
+      "services": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+      "portfolio": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+      "footer": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#D4AF37] text-black font-semibold px-8 py-4 rounded-none hover:bg-[#B3912E] transition-colors uppercase tracking-widest text-sm",
+      "secondary": "bg-[#25D366] text-white font-semibold px-8 py-4 rounded-none hover:bg-[#1EBE5D] transition-colors flex items-center gap-2",
+      "outline": "border border-white/20 text-white px-8 py-4 rounded-none hover:bg-white hover:text-black transition-colors uppercase tracking-widest text-sm"
+    },
+    "cards": {
+      "service": "bg-[#111111] border border-white/10 p-8 hover:border-[#D4AF37]/50 transition-colors group",
+      "testimonial": "bg-[#1A1A1A] border border-white/5 p-10 relative"
+    },
+    "navigation": {
+      "header": "fixed top-0 w-full z-50 bg-[#0A0A0A]/90 backdrop-blur-xl border-b border-white/10 transition-all",
+      "links": "text-sm font-medium text-white/70 hover:text-white uppercase tracking-wider transition-colors"
+    },
+    "accordion": "border-b border-white/10 py-4"
+  },
+  "media": {
+    "images": {
+      "hero_backgrounds": [
+        {
+          "url": "https://images.unsplash.com/photo-1607276159787-9ef4db5c0d0b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHw0fHxjaW5lbWF0aWMlMjBmaWxtJTIwY2FtZXJhJTIwc2V0fGVufDB8fHx8MTc4MzQwODA2MHww&ixlib=rb-4.1.0&q=85",
+          "description": "Black and silver DSLR camera on tripod - cinematic hero background",
+          "category": "hero"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1632187989763-c9c620420b4d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBmaWxtJTIwY3JldyUyMHdvcmtpbmclMjBvbiUyMHNldHxlbnwwfHx8fDE3ODM0MDgwNzJ8MA&ixlib=rb-4.1.0&q=85",
+          "description": "Professional film crew working on set in the dark - service page hero",
+          "category": "hero_service"
+        }
+      ],
+      "corporate_office": [
+        {
+          "url": "https://images.unsplash.com/photo-1714974528718-b3b52f91c334?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBjb3Jwb3JhdGUlMjBidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzgzNDA4MDczfDA&ixlib=rb-4.1.0&q=85",
+          "description": "Luxury corporate business meeting - about page or trust section",
+          "category": "about_trust"
+        }
+      ],
+      "portfolio_thumbnails": [
+        {
+          "url": "https://images.unsplash.com/photo-1619099619226-f96e319e3732?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwzfHxjaW5lbWF0aWMlMjBmaWxtJTIwY2FtZXJhJTIwc2V0fGVufDB8fHx8MTc4MzQwODA2MHww&ixlib=rb-4.1.0&q=85",
+          "description": "Black and gray video camera - portfolio thumbnail",
+          "category": "portfolio"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1768571845597-38f066307f1e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwzfHxkcm9uZSUyMGZseWluZyUyMGNpdHlzY2FwZXxlbnwwfHx8fDE3ODM0MDgwNjB8MA&ixlib=rb-4.1.0&q=85",
+          "description": "Drone flying over a city at sunset - portfolio thumbnail for drone shots",
+          "category": "portfolio"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1581609784724-68d753c36494?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBmaWxtJTIwY3JldyUyMHdvcmtpbmclMjBvbiUyMHNldHxlbnwwfHx8fDE3ODM0MDgwNzJ8MA&ixlib=rb-4.1.0&q=85",
+          "description": "Man with camera rig - behind the scenes thumbnail",
+          "category": "portfolio"
+        }
+      ]
+    },
+    "icons_strategy": "lucide-react for UI icons. Use thin stroke widths (1.5) to maintain elegance."
+  },
+  "specific_page_instructions": {
+    "global": "Every page must have exactly one H1. Floating WhatsApp button on bottom right of every page (z-50). Breadcrumb bar on inner pages.",
+    "home": "Cinematic hero with video-placeholder (use a dark image overlay). Trust bar with logos + stat chips below hero. 8 Service cards grid. Featured work with play buttons. Testimonial slider/grid. FAQs.",
+    "service_template": "Hero with specific service title. What's Included grid. 5-step process timeline. Pricing teaser strip. Related services at bottom.",
+    "portfolio": "Masonry grid layout with filter tabs (e.g., Corporate, Commercials, Drone, Events).",
+    "location": "Include a map placeholder and a reviews strip specifically targeting Gurgaon / Delhi NCR clients.",
+    "contact": "Form with service dropdown. Clear display of address: Plot No. 70, Avenue 77, Sector 77, Gurugram, Haryana 122004."
+  },
+  "testing_attributes": {
+    "rule": "All interactive elements MUST include a data-testid attribute in kebab-case."
+  },
+  "elementor_conversion_guidance": "Keep layouts strictly section-based (Container/Row/Column). Avoid complex scroll-jacking or heavy framer-motion animations that are hard to replicate in WordPress. Use simple fade-ins or slide-ups. Stick to flex and grid utilities."
+}
