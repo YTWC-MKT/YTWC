@@ -1,6 +1,14 @@
 // SEO helpers: canonical site URL + JSON-LD structured data builders.
 export const SITE_URL = "https://ytwc.in";
 
+// The prerender build writes every route as `route/index.html` (and the sitemap
+// lists trailing-slash URLs to match), so every canonical/schema URL built from a
+// path must carry the same trailing slash or Google indexes both as duplicates.
+export const withSlash = (path) => {
+  if (!path || path === "/") return "/";
+  return path.endsWith("/") ? path : `${path}/`;
+};
+
 const AREA_SERVED = ["Gurugram", "Delhi", "Noida", "Faridabad", "Manesar", "Delhi NCR"];
 
 const ADDRESS = {
@@ -39,7 +47,7 @@ export const breadcrumbSchema = (items = []) => ({
     "@type": "ListItem",
     position: i + 1,
     name: it.label,
-    item: `${SITE_URL}${it.to || ""}`,
+    item: `${SITE_URL}${withSlash(it.to)}`,
   })),
 });
 
@@ -50,7 +58,7 @@ export const serviceSchema = ({ name, serviceType, path }) => ({
   serviceType: serviceType || name,
   provider: { "@type": "ProfessionalService", name: "YTWC Pvt Ltd", url: SITE_URL },
   areaServed: AREA_SERVED,
-  url: `${SITE_URL}${path}`,
+  url: `${SITE_URL}${withSlash(path)}`,
 });
 
 export const faqSchema = (faqs = []) => ({
@@ -67,7 +75,7 @@ export const localBusinessSchema = ({ name, path, geo }) => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name,
-  url: `${SITE_URL}${path}`,
+  url: `${SITE_URL}${withSlash(path)}`,
   image: `${SITE_URL}/logo.png`,
   telephone: "+91-9990433338",
   email: "hi@ytwc.in",
@@ -84,5 +92,5 @@ export const articleSchema = ({ headline, path, image, date }) => ({
   datePublished: date,
   author: { "@type": "Person", name: "Lokesh Yadav" },
   publisher: { "@type": "Organization", name: "YTWC Pvt Ltd", logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` } },
-  mainEntityOfPage: `${SITE_URL}${path}`,
+  mainEntityOfPage: `${SITE_URL}${withSlash(path)}`,
 });

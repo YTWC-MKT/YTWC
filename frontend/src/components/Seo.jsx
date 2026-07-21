@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet-async";
-import { SITE_URL, ORG_SCHEMA, breadcrumbSchema } from "../data/seo";
+import { SITE_URL, ORG_SCHEMA, breadcrumbSchema, withSlash } from "../data/seo";
 
 // Renders per-page <title>, meta description, canonical + JSON-LD (Org + Breadcrumb always,
 // plus any extra schemas passed in). Captured into static HTML during prerender.
 export default function Seo({ title, description, path = "", breadcrumbs, schemas = [] }) {
-  const canonical = `${SITE_URL}${path}`;
+  const canonical = `${SITE_URL}${withSlash(path)}`;
   const graph = [ORG_SCHEMA];
   if (breadcrumbs && breadcrumbs.length) graph.push(breadcrumbSchema(breadcrumbs));
   graph.push(...schemas);

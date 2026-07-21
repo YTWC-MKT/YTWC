@@ -37,6 +37,9 @@ export default function Header() {
               src={COMPANY.logo}
               alt="YTWC Pvt Ltd — production house and creative agency in Gurgaon logo"
               className="h-10 w-36 object-cover invert"
+              width="144"
+              height="40"
+              fetchPriority="high"
             />
           </Link>
 
