@@ -9,7 +9,7 @@ import { SERVICES, STATS, WHY, TESTIMONIALS, HOME_FAQS, PORTFOLIO, IMAGES } from
 import { faqSchema } from "../data/seo";
 
 const clients = ["ACME CORP", "NORTHWIND", "VERTEX", "MERIDIAN", "AURUM", "STRATOS"];
-const recent = PORTFOLIO.slice(0, 3);
+const recent = PORTFOLIO.slice(0, 4);
 
 export default function Home() {
   return (
@@ -85,8 +85,10 @@ export default function Home() {
       </section>
 
       {/* Featured work */}
-      <section className="py-20 md:py-28 bg-[#111111] border-y border-white/10" data-testid="featured-work-section">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+      <section className="relative py-20 md:py-28 bg-[#111111] border-y border-white/10 overflow-hidden" data-testid="featured-work-section">
+        <div className="absolute -left-32 top-1/3 w-96 h-96 bg-[#D4AF37]/[0.06] rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+        <div className="absolute -right-32 bottom-1/3 w-96 h-96 bg-[#D4AF37]/[0.06] rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+        <div className="relative max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="flex items-end justify-between mb-14">
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Portfolio</p>
@@ -96,7 +98,7 @@ export default function Home() {
               View all <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {recent.map((w) => (
               <Link to="/portfolio" key={w.title} data-testid="featured-work-card" className="group relative aspect-video overflow-hidden">
                 <img src={w.img} alt={w.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -151,8 +153,9 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 md:py-32" data-testid="testimonials-section">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+      <section className="relative py-20 md:py-32 overflow-hidden" data-testid="testimonials-section">
+        <div className="absolute -right-32 top-0 w-96 h-96 bg-[#D4AF37]/[0.06] rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+        <div className="relative max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="max-w-2xl mb-14">
             <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Client Voices</p>
             <h2 className="font-serif text-3xl sm:text-5xl text-white">Trusted by Marketing Leaders</h2>

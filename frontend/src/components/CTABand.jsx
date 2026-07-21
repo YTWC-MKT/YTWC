@@ -6,8 +6,10 @@ export default function CTABand({
   prefix = "ctaband-",
 }) {
   return (
-    <section className="relative py-20 md:py-28 bg-[#111111] border-y border-white/10" data-testid="cta-band">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+    <section className="relative py-20 md:py-28 bg-[#111111] border-y border-white/10 overflow-hidden" data-testid="cta-band">
+      <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#D4AF37]/[0.07] rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+      <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#D4AF37]/[0.07] rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+      <div className="relative max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
         <div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white leading-tight max-w-2xl">{title}</h2>
           <p className="mt-4 text-white/60 text-lg max-w-xl">{subtitle}</p>
