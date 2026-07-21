@@ -52,8 +52,8 @@ export default function Footer() {
               <img
                 src={COMPANY.logo}
                 alt="YTWC Pvt Ltd logo — corporate video production house in Sector 77 Gurgaon"
-                className="h-11 w-40 object-cover invert"
-                width="160"
+                className="h-11 w-auto"
+                width="192"
                 height="44"
                 loading="lazy"
               />

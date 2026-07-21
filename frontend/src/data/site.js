@@ -3,7 +3,10 @@
 export const COMPANY = {
   name: "YTWC Pvt Ltd",
   wordmark: "YTWC",
-  logo: "https://customer-assets.emergentagent.com/job_ytwc-production/artifacts/zcep6gbr_YTWC%20Logo.webp",
+  // White-ink-on-transparent variant for the dark header/footer (self-hosted, properly
+  // trimmed and alpha-masked — the original CDN asset had an opaque white background,
+  // which turned solid black when CSS-inverted for dark backgrounds).
+  logo: "/logo-white.png",
   phones: ["+91 99904 33338", "+91 99904 33319"],
   whatsapp: "919990433338",
   email: "hi@ytwc.in",
