@@ -46,7 +46,7 @@ export default function LocationPage({ locationKey }) {
 
       {/* Services */}
       <section className="py-16 md:py-24" data-testid="location-services">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">Our Services in {loc.breadcrumb}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cityServices.map((s) => (
@@ -71,7 +71,7 @@ export default function LocationPage({ locationKey }) {
 
       {/* Studio / coverage + map */}
       <section className="py-16 md:py-24 bg-[#111111] border-y border-white/10" data-testid="studio-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-serif text-3xl sm:text-4xl text-white mb-6">{loc.coverageTitle}</h2>
             <p className="text-white/70 text-lg leading-relaxed mb-8">{loc.coverage}</p>
@@ -95,7 +95,7 @@ export default function LocationPage({ locationKey }) {
 
       {/* Areas covered */}
       <section className="py-16 md:py-24" data-testid="areas-covered">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-10">Areas We Cover in {loc.breadcrumb}</h2>
           <div className="flex flex-wrap gap-3">
             {loc.localities.map((l) => (
@@ -107,7 +107,7 @@ export default function LocationPage({ locationKey }) {
 
       {/* Reviews */}
       <section className="py-16 md:py-24 bg-[#111111] border-y border-white/10" data-testid="reviews-strip">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="flex items-center gap-3 mb-10">
             <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-gold" fill="currentColor" />)}</div>
             <p className="text-white/70">4.9 · Rated by {loc.breadcrumb} &amp; Delhi NCR clients</p>
@@ -126,7 +126,7 @@ export default function LocationPage({ locationKey }) {
 
       {/* Related locations */}
       <section className="py-16 md:py-24" data-testid="related-locations">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-10">Explore Other Locations</h2>
           <div className="flex flex-wrap gap-4">
             {loc.relatedLocations.map((r) => (

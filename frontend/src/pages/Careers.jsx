@@ -61,7 +61,7 @@ export default function Careers() {
       <PageBreadcrumb items={breadcrumbs} />
 
       <section className="py-16 md:py-24" data-testid="careers-page">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Join the Team</p>
           <h1 className="font-serif text-4xl sm:text-6xl text-white">Careers at YTWC</h1>
           <p className="mt-5 text-white/60 text-lg max-w-2xl">We're building the production house Fortune-500 marketing heads hire — from our studio in Sector 77, Gurgaon. If you love craft and moving fast, we'd love to meet you.</p>

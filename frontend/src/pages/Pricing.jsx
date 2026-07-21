@@ -32,7 +32,7 @@ export default function Pricing() {
       <PageBreadcrumb items={breadcrumbs} />
 
       <section className="py-16 md:py-24" data-testid="pricing-page">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Transparent &amp; Custom</p>
           <h1 className="font-serif text-4xl sm:text-6xl text-white">Pricing &amp; Packages</h1>
           <p className="mt-5 text-white/60 text-lg max-w-2xl">Indicative starting ranges across our services in Gurgaon and Delhi NCR. Every project gets an itemised, custom quote within 24 hours.</p>

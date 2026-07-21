@@ -59,7 +59,7 @@ export default function About() {
       </section>
 
       <section className="py-16 md:py-24" data-testid="studio-equipment">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">Our Studio &amp; Equipment</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {studioGrid.map((g) => (
@@ -72,7 +72,7 @@ export default function About() {
       </section>
 
       <section className="py-16 md:py-24 bg-[#111111] border-y border-white/10" data-testid="brands-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">Our Brands</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {brands.map((b) => (
@@ -90,7 +90,7 @@ export default function About() {
       </section>
 
       <section className="py-16 md:py-24" data-testid="team-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map((t) => (

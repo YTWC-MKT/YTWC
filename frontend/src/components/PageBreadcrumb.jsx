@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 export default function PageBreadcrumb({ items = [] }) {
   return (
     <div className="border-b border-white/10 bg-[#0A0A0A]" data-testid="breadcrumb-bar">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-4">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-4">
         <nav className="flex items-center flex-wrap gap-2 text-xs uppercase tracking-wider text-white/50">
           {items.map((item, i) => (
             <span key={i} className="flex items-center gap-2">

@@ -25,7 +25,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden" data-testid="hero-section">
         <img src={IMAGES.heroHome} alt="cinematic corporate video shoot on a film set in Gurgaon" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/85 to-[#0A0A0A]/40" />
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 pt-28 pb-16 w-full">
+        <div className="relative max-w-[1440px] mx-auto px-6 md:px-12 pt-28 pb-16 w-full">
           <div className="max-w-3xl animate-fade-up">
             <p className="text-xs uppercase tracking-[0.3em] text-gold mb-6">Production House · Creative Agency</p>
             <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl leading-[1.05] text-white">
@@ -41,7 +41,7 @@ export default function Home() {
 
       {/* Trust bar */}
       <section className="bg-[#111111] border-y border-white/10 py-12" data-testid="trust-bar">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-60">
             {clients.map((c) => (
               <span key={c} className="font-serif text-xl md:text-2xl tracking-wide text-white/70">{c}</span>
@@ -57,7 +57,7 @@ export default function Home() {
 
       {/* Services */}
       <section className="py-20 md:py-32" data-testid="services-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="max-w-2xl mb-14">
             <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Capabilities</p>
             <h2 className="font-serif text-3xl sm:text-5xl text-white">What We Do</h2>
@@ -86,7 +86,7 @@ export default function Home() {
 
       {/* Featured work */}
       <section className="py-20 md:py-28 bg-[#111111] border-y border-white/10" data-testid="featured-work-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="flex items-end justify-between mb-14">
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Portfolio</p>
@@ -115,7 +115,7 @@ export default function Home() {
 
       {/* Why YTWC */}
       <section className="py-20 md:py-32" data-testid="why-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="max-w-2xl mb-14">
             <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">The YTWC Difference</p>
             <h2 className="font-serif text-3xl sm:text-5xl text-white">Why YTWC</h2>
@@ -152,7 +152,7 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="py-20 md:py-32" data-testid="testimonials-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="max-w-2xl mb-14">
             <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Client Voices</p>
             <h2 className="font-serif text-3xl sm:text-5xl text-white">Trusted by Marketing Leaders</h2>

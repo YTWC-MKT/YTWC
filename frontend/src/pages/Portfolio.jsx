@@ -21,7 +21,7 @@ export default function Portfolio() {
       <PageBreadcrumb items={[{ label: "Home", to: "/" }, { label: "Portfolio" }]} />
 
       <section className="py-16 md:py-24" data-testid="portfolio-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Selected Projects</p>
           <h1 className="font-serif text-4xl sm:text-6xl text-white">Our Work</h1>
           <p className="mt-5 text-white/60 text-lg max-w-2xl">Corporate films, ad films, industrial shoots, photography and drone cinematography from across Gurgaon and Delhi NCR.</p>

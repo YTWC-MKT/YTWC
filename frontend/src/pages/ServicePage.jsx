@@ -48,7 +48,7 @@ export default function ServicePage() {
 
       {/* Hero */}
       <section className="py-16 md:py-24" data-testid="service-hero">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gold mb-6">{isMarketing ? "Marketing Service" : "Production Service"}</p>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] text-white">{data.h1}</h1>
@@ -68,7 +68,7 @@ export default function ServicePage() {
 
       {/* What's included */}
       <section className="py-16 md:py-24 bg-[#111111] border-y border-white/10" data-testid="included-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">{data.includedTitle || "What's Included"}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.included.map((c) => (
@@ -84,7 +84,7 @@ export default function ServicePage() {
 
       {/* Process */}
       <section className="py-16 md:py-24" data-testid="process-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-14">Our Process</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {data.process.map((step, i) => (
@@ -111,7 +111,7 @@ export default function ServicePage() {
       {/* Callout card (e.g. ShutterDeck) */}
       {data.callout && (
         <section className="py-14" data-testid="service-callout">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="max-w-[1440px] mx-auto px-6 md:px-12">
             <div className="bg-gold/10 border border-gold/30 p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div>
                 <h3 className="font-serif text-2xl text-white mb-2">{data.callout.title}</h3>
@@ -127,7 +127,7 @@ export default function ServicePage() {
 
       {/* Recent work */}
       <section className="py-16 md:py-24" data-testid="service-work-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">{data.workTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {work.map((w) => (
@@ -162,7 +162,7 @@ export default function ServicePage() {
 
       {/* Pricing teaser */}
       <section className="py-14" data-testid="pricing-strip">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="bg-gold/10 border border-gold/30 px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <p className="font-serif text-2xl md:text-3xl text-white text-center sm:text-left">{data.pricing}</p>
             <Link to="/contact" data-testid="pricing-cta" className="bg-gold text-black font-semibold px-8 py-3.5 uppercase tracking-widest text-xs hover:bg-gold-hover transition-colors whitespace-nowrap">Get a Quote</Link>
@@ -174,7 +174,7 @@ export default function ServicePage() {
 
       {/* Related services */}
       <section className="py-16 md:py-24 bg-[#111111] border-t border-white/10" data-testid="related-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">Related Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {data.related.map((r) => (

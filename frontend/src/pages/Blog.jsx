@@ -16,7 +16,7 @@ export default function Blog() {
       <PageBreadcrumb items={breadcrumbs} />
 
       <section className="py-16 md:py-24" data-testid="blog-hub">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">The Journal</p>
           <h1 className="font-serif text-4xl sm:text-6xl text-white">Production &amp; Marketing Insights</h1>
           <p className="mt-5 text-white/60 text-lg max-w-2xl">Guides, pricing breakdowns and creative thinking for brands producing video and content across Gurgaon and Delhi NCR.</p>

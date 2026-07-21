@@ -45,7 +45,7 @@ const moreLinks = [
 export default function Footer() {
   return (
     <footer data-testid="site-footer" className="bg-[#0A0A0A] border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Link to="/" className="inline-flex">
@@ -128,7 +128,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
           <p>© 2026 {COMPANY.name}</p>
           <div className="flex items-center gap-5">
             <a href="#" className="hover:text-white">Privacy</a>

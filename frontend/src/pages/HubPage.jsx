@@ -32,7 +32,7 @@ export default function HubPage({ hubKey }) {
 
       {/* Intro + cards */}
       <section className="py-16 md:py-24" data-testid="hub-cards">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <p className="text-white/60 text-lg max-w-3xl mb-12">{hub.intro}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {hub.cards.map((c) => (

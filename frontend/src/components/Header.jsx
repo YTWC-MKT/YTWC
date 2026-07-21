@@ -30,7 +30,7 @@ export default function Header() {
         scrolled ? "bg-[#0A0A0A]/95 backdrop-blur-xl border-white/10" : "bg-transparent border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
           <Link to="/" data-testid="logo-link" className="flex items-center">
             <img

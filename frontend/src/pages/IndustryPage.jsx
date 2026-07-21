@@ -38,7 +38,7 @@ export default function IndustryPage() {
 
       {/* Pain points */}
       <section className="py-16 md:py-24" data-testid="industry-pains">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">Challenges We Solve</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {data.pains.map((p) => (
@@ -56,7 +56,7 @@ export default function IndustryPage() {
 
       {/* Relevant services */}
       <section className="py-16 md:py-24 bg-[#111111] border-y border-white/10" data-testid="industry-services">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-white mb-12">Services That Fit</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s) => (
