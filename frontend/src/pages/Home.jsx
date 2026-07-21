@@ -86,8 +86,8 @@ export default function Home() {
 
       {/* Featured work */}
       <section className="relative py-20 md:py-28 bg-[#111111] border-y border-white/10 overflow-hidden" data-testid="featured-work-section">
-        <div className="absolute -left-32 top-1/3 w-96 h-96 bg-[#D4AF37]/[0.06] rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
-        <div className="absolute -right-32 bottom-1/3 w-96 h-96 bg-[#D4AF37]/[0.06] rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+        <div className="absolute -left-16 top-1/3 w-56 h-56 bg-[#D4AF37]/[0.04] rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+        <div className="absolute -right-16 bottom-1/3 w-56 h-56 bg-[#D4AF37]/[0.04] rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
         <div className="relative max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="flex items-end justify-between mb-14">
             <div>
@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* Why YTWC */}
-      <section className="py-20 md:py-32" data-testid="why-section">
+      <section className="py-16 md:py-24" data-testid="why-section">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="max-w-2xl mb-14">
             <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">The YTWC Difference</p>
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* Areas served */}
-      <section className="py-16 md:py-24 bg-[#111111] border-y border-white/10" data-testid="areas-section">
+      <section className="py-12 md:py-16 bg-[#111111] border-y border-white/10" data-testid="areas-section">
         <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
           <h2 className="font-serif text-3xl sm:text-5xl text-white mb-6">Serving All of Delhi NCR</h2>
           <p className="text-white/60 text-lg leading-relaxed">
@@ -153,8 +153,8 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="relative py-20 md:py-32 overflow-hidden" data-testid="testimonials-section">
-        <div className="absolute -right-32 top-0 w-96 h-96 bg-[#D4AF37]/[0.06] rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+      <section className="relative py-16 md:py-24 overflow-hidden" data-testid="testimonials-section">
+        <div className="absolute -right-16 top-0 w-56 h-56 bg-[#D4AF37]/[0.04] rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
         <div className="relative max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="max-w-2xl mb-14">
             <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Client Voices</p>
