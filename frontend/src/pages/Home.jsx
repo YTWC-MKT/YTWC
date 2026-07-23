@@ -56,7 +56,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="py-20 md:py-32" data-testid="services-section">
+      <section className="py-16 md:py-24" data-testid="services-section">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="max-w-2xl mb-14">
             <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Capabilities</p>
@@ -85,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* Featured work */}
-      <section className="relative py-20 md:py-28 bg-[#111111] border-y border-white/10 overflow-hidden" data-testid="featured-work-section">
+      <section className="relative py-16 md:py-24 bg-[#111111] border-y border-white/10 overflow-hidden" data-testid="featured-work-section">
         <div className="absolute -left-16 top-1/3 w-56 h-56 bg-[#D4AF37]/[0.04] rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
         <div className="absolute -right-16 bottom-1/3 w-56 h-56 bg-[#D4AF37]/[0.04] rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
         <div className="relative max-w-[1440px] mx-auto px-6 md:px-12">

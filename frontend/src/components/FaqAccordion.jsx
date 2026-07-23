@@ -2,7 +2,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./
 
 export default function FaqAccordion({ title = "Frequently Asked Questions", faqs = [], eyebrow = "FAQ" }) {
   return (
-    <section className="py-20 md:py-28 bg-[#0A0A0A]" data-testid="faq-section">
+    <section className="py-16 md:py-24 bg-[#0A0A0A]" data-testid="faq-section">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <p className="text-xs uppercase tracking-[0.25em] text-gold mb-4">{eyebrow}</p>
         <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-10">{title}</h2>
