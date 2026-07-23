@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 import PageBreadcrumb from "../components/PageBreadcrumb";
 import CTABand from "../components/CTABand";
 import Seo from "../components/Seo";
-import VideoModal, { getYouTubeId } from "../components/VideoModal";
+import VideoModal, { getEmbedUrl } from "../components/VideoModal";
 import { PORTFOLIO, PORTFOLIO_FILTERS } from "../data/site";
 import latestVideo from "../data/latestVideo.json";
 
@@ -74,7 +74,7 @@ export default function Portfolio() {
           {/* Grid */}
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
             {items.map((p, i) => {
-              const hasVideo = Boolean(getYouTubeId(p.videoUrl));
+              const hasVideo = Boolean(getEmbedUrl(p.videoUrl));
               const Wrapper = hasVideo ? "button" : "div";
               return (
                 <Wrapper

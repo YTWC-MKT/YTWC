@@ -11,11 +11,29 @@ export function getYouTubeId(url) {
   return match ? match[1] : null;
 }
 
+// Extracts a Google Drive file ID from a share link
+// (drive.google.com/file/d/{ID}/view or /preview, with any query string).
+export function getDriveFileId(url) {
+  if (!url) return null;
+  const match = url.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+  return match ? match[1] : null;
+}
+
+// Resolves any supported project video link to an embeddable iframe src,
+// or null if the URL doesn't match a supported host.
+export function getEmbedUrl(url) {
+  const youtubeId = getYouTubeId(url);
+  if (youtubeId) return `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
+  const driveId = getDriveFileId(url);
+  if (driveId) return `https://drive.google.com/file/d/${driveId}/preview`;
+  return null;
+}
+
 export default function VideoModal({ videoUrl, title, onClose }) {
-  const videoId = getYouTubeId(videoUrl);
+  const embedUrl = getEmbedUrl(videoUrl);
 
   useEffect(() => {
-    if (!videoId) return;
+    if (!embedUrl) return;
     const onKeyDown = (e) => {
       if (e.key === "Escape") onClose();
     };
@@ -25,9 +43,9 @@ export default function VideoModal({ videoUrl, title, onClose }) {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = "";
     };
-  }, [videoId, onClose]);
+  }, [embedUrl, onClose]);
 
-  if (!videoId) return null;
+  if (!embedUrl) return null;
 
   return (
     <div
@@ -50,7 +68,7 @@ export default function VideoModal({ videoUrl, title, onClose }) {
       >
         <iframe
           className="w-full h-full"
-          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
+          src={embedUrl}
           title={title || "YTWC project video"}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
