@@ -121,19 +121,21 @@ export const HOME_FAQS = [
   { q: "How do I get a quote?", a: "Click 'Get a Quote' or message us on WhatsApp with a short brief. We respond within one business day with an approach and estimate." },
 ];
 
+// videoUrl: paste a YouTube link (any format) to make a portfolio card open a
+// video lightbox on click. Leave blank/undefined to keep it as a photo-only card.
 export const PORTFOLIO = [
-  { title: "TechCorp Brand Film", cat: "Corporate Films", img: IMAGES.crew, alt: "corporate brand film shoot in a Gurgaon office" },
-  { title: "AutoParts TVC", cat: "Ad Films", img: IMAGES.camera, alt: "ad film TVC production set in Delhi NCR" },
-  { title: "Manesar Plant Walkthrough", cat: "Industrial", img: IMAGES.corporateOffice, alt: "industrial factory shoot at a Manesar plant" },
-  { title: "Township Aerial Reel", cat: "Drone", img: IMAGES.drone, alt: "drone aerial videography of a Noida township" },
-  { title: "Leadership Headshots", cat: "Photography", img: IMAGES.corporateOffice, alt: "corporate photography headshots session in Gurgaon" },
-  { title: "FMCG Product Series", cat: "Photography", img: IMAGES.camera, alt: "product photography shoot in Gurgaon studio" },
-  { title: "Cyber City Corporate Film", cat: "Corporate Films", img: IMAGES.heroService, alt: "corporate video shoot in Cyber City Gurgaon" },
-  { title: "Real Estate Flythrough", cat: "Drone", img: IMAGES.drone, alt: "drone flyover of real estate project in Delhi NCR" },
-  { title: "Startup Founder Story", cat: "Corporate Films", img: IMAGES.heroHome, alt: "founder interview corporate film in Gurgaon" },
-  { title: "Festive Campaign TVC", cat: "Ad Films", img: IMAGES.heroService, alt: "festive ad film campaign production in Delhi NCR" },
-  { title: "Warehouse Operations Film", cat: "Industrial", img: IMAGES.crew, alt: "warehouse and industrial operations film in Manesar" },
-  { title: "Event Coverage Reel", cat: "Photography", img: IMAGES.corporateOffice, alt: "corporate event photography coverage in Gurgaon" },
+  { title: "TechCorp Brand Film", cat: "Corporate Films", img: IMAGES.crew, alt: "corporate brand film shoot in a Gurgaon office", videoUrl: "" },
+  { title: "AutoParts TVC", cat: "Ad Films", img: IMAGES.camera, alt: "ad film TVC production set in Delhi NCR", videoUrl: "" },
+  { title: "Manesar Plant Walkthrough", cat: "Industrial", img: IMAGES.corporateOffice, alt: "industrial factory shoot at a Manesar plant", videoUrl: "" },
+  { title: "Township Aerial Reel", cat: "Drone", img: IMAGES.drone, alt: "drone aerial videography of a Noida township", videoUrl: "" },
+  { title: "Leadership Headshots", cat: "Photography", img: IMAGES.corporateOffice, alt: "corporate photography headshots session in Gurgaon", videoUrl: "" },
+  { title: "FMCG Product Series", cat: "Photography", img: IMAGES.camera, alt: "product photography shoot in Gurgaon studio", videoUrl: "" },
+  { title: "Cyber City Corporate Film", cat: "Corporate Films", img: IMAGES.heroService, alt: "corporate video shoot in Cyber City Gurgaon", videoUrl: "" },
+  { title: "Real Estate Flythrough", cat: "Drone", img: IMAGES.drone, alt: "drone flyover of real estate project in Delhi NCR", videoUrl: "" },
+  { title: "Startup Founder Story", cat: "Corporate Films", img: IMAGES.heroHome, alt: "founder interview corporate film in Gurgaon", videoUrl: "" },
+  { title: "Festive Campaign TVC", cat: "Ad Films", img: IMAGES.heroService, alt: "festive ad film campaign production in Delhi NCR", videoUrl: "" },
+  { title: "Warehouse Operations Film", cat: "Industrial", img: IMAGES.crew, alt: "warehouse and industrial operations film in Manesar", videoUrl: "" },
+  { title: "Event Coverage Reel", cat: "Photography", img: IMAGES.corporateOffice, alt: "corporate event photography coverage in Gurgaon", videoUrl: "" },
 ];
 
 export const PORTFOLIO_FILTERS = ["All", "Corporate Films", "Ad Films", "Industrial", "Photography", "Drone"];

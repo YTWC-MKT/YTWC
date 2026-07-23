@@ -2,6 +2,7 @@
 // Static prerender: crawls the built SPA with headless Chrome and writes a
 // full static HTML file for every route, plus sitemap.xml. Runs as `postbuild`.
 const fs = require("fs");
+const os = require("os");
 const path = require("path");
 const http = require("http");
 const { spawn } = require("child_process");
@@ -24,7 +25,15 @@ function findChrome() {
     }
   } catch (e) {}
   if (process.env.PUPPETEER_EXECUTABLE_PATH) candidates.push(process.env.PUPPETEER_EXECUTABLE_PATH);
-  candidates.push("/usr/bin/chromium", "/usr/bin/google-chrome");
+  candidates.push(
+    "/usr/bin/chromium",
+    "/usr/bin/google-chrome",
+    // Windows dev-machine fallbacks (no headless Chrome installed by default there).
+    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"
+  );
   return candidates.find((c) => { try { return fs.existsSync(c); } catch { return false; } }) || "/usr/bin/google-chrome";
 }
 const CHROME = findChrome();
@@ -74,7 +83,7 @@ async function run() {
     "--disable-crashpad",
     "--disable-breakpad",
     `--remote-debugging-port=${CDP_PORT}`,
-    "--user-data-dir=/tmp/pptr-profile",
+    `--user-data-dir=${path.join(os.tmpdir(), "ytwc-pptr-profile")}`,
     "about:blank",
   ], { stdio: "ignore", detached: false });
   chromeProc.on("error", (e) => console.error("[prerender] chrome spawn error:", e.message));
