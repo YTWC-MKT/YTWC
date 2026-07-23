@@ -29,6 +29,17 @@ export function getEmbedUrl(url) {
   return null;
 }
 
+// Resolves a project video link to its real thumbnail image, or null if
+// the URL doesn't match a supported host (caller should keep its own
+// fallback image in that case).
+export function getVideoThumbnail(url) {
+  const youtubeId = getYouTubeId(url);
+  if (youtubeId) return `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`;
+  const driveId = getDriveFileId(url);
+  if (driveId) return `https://lh3.googleusercontent.com/d/${driveId}=w1000`;
+  return null;
+}
+
 export default function VideoModal({ videoUrl, title, onClose }) {
   const embedUrl = getEmbedUrl(videoUrl);
 

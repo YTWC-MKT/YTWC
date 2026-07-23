@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 import PageBreadcrumb from "../components/PageBreadcrumb";
 import CTABand from "../components/CTABand";
 import Seo from "../components/Seo";
-import VideoModal, { getEmbedUrl } from "../components/VideoModal";
+import VideoModal, { getEmbedUrl, getVideoThumbnail } from "../components/VideoModal";
 import { PORTFOLIO, PORTFOLIO_FILTERS } from "../data/site";
 import latestVideo from "../data/latestVideo.json";
 
@@ -75,6 +75,7 @@ export default function Portfolio() {
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
             {items.map((p, i) => {
               const hasVideo = Boolean(getEmbedUrl(p.videoUrl));
+              const thumb = hasVideo ? getVideoThumbnail(p.videoUrl) : null;
               const Wrapper = hasVideo ? "button" : "div";
               return (
                 <Wrapper
@@ -84,7 +85,12 @@ export default function Portfolio() {
                   onClick={hasVideo ? () => setActiveVideo(p) : undefined}
                   className={`group relative block w-full text-left overflow-hidden mb-6 break-inside-avoid ${i % 3 === 0 ? "aspect-[3/4]" : "aspect-[4/3]"} ${hasVideo ? "cursor-pointer" : ""}`}
                 >
-                  <img src={p.img} alt={p.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img
+                    src={thumb || p.img}
+                    alt={p.alt}
+                    onError={(e) => { if (e.currentTarget.src !== p.img) e.currentTarget.src = p.img; }}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   {hasVideo && (
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
