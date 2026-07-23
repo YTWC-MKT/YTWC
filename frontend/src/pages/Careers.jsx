@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { MapPin, Clock, Sparkles } from "lucide-react";
 import { toast, Toaster } from "sonner";
+import { Link } from "react-router-dom";
 import PageBreadcrumb from "../components/PageBreadcrumb";
 import Seo from "../components/Seo";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
@@ -103,6 +104,10 @@ export default function Careers() {
                 </Select>
                 <textarea data-testid="careers-message" rows={4} className={inputCls} placeholder="Portfolio link & a line about you" value={form.message} onChange={(e) => update("message", e.target.value)} />
                 <button type="submit" disabled={loading} data-testid="careers-submit" className="w-full bg-gold text-black font-semibold px-8 py-4 uppercase tracking-widest text-sm hover:bg-gold-hover transition-colors disabled:opacity-60">{loading ? "Sending…" : "Submit Application"}</button>
+                <p className="text-xs text-white/40 text-center">
+                  By submitting this form, you agree to our{" "}
+                  <Link to="/privacy-policy" className="text-gold hover:underline">Privacy Policy</Link>.
+                </p>
               </form>
             </div>
             <div className="bg-[#111111] border border-white/10 p-8 space-y-5 h-fit">

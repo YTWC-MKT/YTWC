@@ -15,6 +15,8 @@ import OurBrands from "@/pages/OurBrands";
 import Pricing from "@/pages/Pricing";
 import FaqPage from "@/pages/FaqPage";
 import Careers from "@/pages/Careers";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsConditions from "@/pages/TermsConditions";
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsConditions />} />
 
           {/* Blog */}
           <Route path="/blog" element={<Blog />} />

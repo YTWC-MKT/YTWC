@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { toast, Toaster } from "sonner";
+import { Link } from "react-router-dom";
 import PageBreadcrumb from "../components/PageBreadcrumb";
 import FaqAccordion from "../components/FaqAccordion";
 import Seo from "../components/Seo";
@@ -87,6 +88,10 @@ export default function Contact() {
               <button type="submit" disabled={loading} data-testid="submit-contact" className="w-full bg-gold text-black font-semibold px-8 py-4 uppercase tracking-widest text-sm hover:bg-gold-hover transition-colors disabled:opacity-60">
                 {loading ? "Sending…" : "Submit Enquiry"}
               </button>
+              <p className="text-xs text-white/40 text-center">
+                By submitting this form, you agree to our{" "}
+                <Link to="/privacy-policy" className="text-gold hover:underline">Privacy Policy</Link>.
+              </p>
             </form>
 
             {/* NAP */}

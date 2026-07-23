@@ -131,7 +131,8 @@ export default function Footer() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
           <p>© 2026 {COMPANY.name}</p>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-white">Privacy</a>
+            <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="hover:text-white">Terms &amp; Conditions</Link>
             <a href="#" className="hover:text-white">Sitemap</a>
           </div>
         </div>
